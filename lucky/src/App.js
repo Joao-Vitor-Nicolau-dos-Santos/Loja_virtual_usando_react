@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import Banner from "./componentes/Banner/index.js";
 import Cabecalho from "./componentes/Cabecalho/index.js";
@@ -7,6 +8,10 @@ import Conteudo from "./componentes/Conteudo/index.js";
 import Rodape from "./componentes/Rodape/index.js";
 import Produtos from './componentes/Produtos/index.js';
 import OrdenarProdutos from './componentes/Ordenacao/index.js';
+import FiltrarTipo from './componentes/Tipo/index.js';
+import Carrinho from './componentes/Carrinho/index.js';
+
+import estilos from './componentes/Carrinho/Carrinho.module.css';
 
 const imagens = [
     'https://i.imgur.com/QkIa5tT.jpeg',
@@ -19,6 +24,8 @@ const imagens = [
 function App() {
   const [produtos, setProdutos] = useState([]);
   const [criterioOrdenacao, setCriterioOrdenacao] = useState('');
+  const [tipo, setTipo] = useState(''); 
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
       axios.get('https://api.escuelajs.co/api/v1/products')
@@ -45,20 +52,56 @@ function App() {
       }
   };
 
+  const filtrarProdutos = (produtos, tipo) => {
+      if (tipo) {
+          return produtos.filter(produto => produto.category.name === tipo); 
+      }
+      return produtos;
+  };
+
+  const addToCart = (produto) => {
+      setCartItems([...cartItems, produto]);
+  };
+
+  const getTotalItemsInCart = () => {
+      return cartItems.length;
+  };
+
   return (
-    <>
-    
+    <Router>
       <Cabecalho />
 
-      <Banner imagens={imagens} />
-
       <Conteudo>
-        <OrdenarProdutos criterio={criterioOrdenacao} setCriterio={setCriterioOrdenacao} />
-        <Produtos dados={ordenarProdutos(produtos, criterioOrdenacao)} />
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <>
+                <Banner imagens={imagens} />
+                <FiltrarTipo tipo={tipo} setTipo={setTipo} /> {/* Adicionado filtro por tipo */}
+                <OrdenarProdutos criterio={criterioOrdenacao} setCriterio={setCriterioOrdenacao} />
+                <Produtos dados={ordenarProdutos(filtrarProdutos(produtos, tipo), criterioOrdenacao)} addToCart={addToCart} />
+              </>
+            } 
+          />
+          <Route 
+            path="/carrinho" 
+            element={
+              <Carrinho cartItems={cartItems} />
+            } 
+          />
+        </Routes>
       </Conteudo> 
 
+      <Link to="/carrinho" className={estilos.iconeCarrinho}>
+        🛒
+        {getTotalItemsInCart() > 0 && (
+          <span className={estilos.contadorCarrinho}>{getTotalItemsInCart()}</span>
+        )}
+      </Link>
+
       <Rodape />
-    </>
+    </Router>
   );
 }
 

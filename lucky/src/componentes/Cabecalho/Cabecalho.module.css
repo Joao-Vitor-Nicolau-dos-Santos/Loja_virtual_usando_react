@@ -1,29 +1,5 @@
-/* .cabecalho{
-    background-color: #5d7c5a;
-    border-bottom: 4px solid #41573f;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    height: 70px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.cabecalho span{
-    font-size: 2.3rem;
-    font-weight: 300;
-}
-
-.cabecalho a{
-    text-decoration: none;
-    padding-inline: 3rem;
-    color: #ffffff;
-} */
-
-
 .cabecalho {
+    
     background-color: #5d7c5a;
     border-bottom: 4px solid #41573f;
     color: #fff;
@@ -33,27 +9,27 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribui espaço corretamente em desktops */
-    padding: 0 2rem; /* Adiciona algum padding nas laterais */
+    justify-content: space-between; 
+    padding: 0 2rem; 
     box-sizing: border-box;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 2.3rem;
+    font-family: "Baskervville SC", serif;
+    font-size: 3rem;
     font-weight: 300;
     flex-grow: 1;
     text-align: center;
-    position: relative; /* Necessário para alinhamento */
+    position: relative; 
 }
 
 .cabecalho a {
     text-decoration: none;
     color: #ffffff;
-    padding: 0 1rem; /* Ajuste para espaçamento dos links */
+    padding: 0 1rem; 
 }
 
-/* Botão de menu visível apenas em dispositivos móveis */
 .menuBtn {
     display: none;
     background: none;
@@ -61,17 +37,16 @@
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
-    position: absolute; /* Posiciona o botão no canto superior direito */
+    position: absolute; 
     top: 0.5rem;
     right: 1rem;
-    z-index: 1001; /* Garante que o botão esteja acima de outros elementos */
+    z-index: 1001;
 }
 
-/* Menu de navegação em dispositivos móveis */
 nav {
     display: none;
     position: fixed;
-    top: 70px; /* Abaixo do cabeçalho */
+    top: 70px; 
     left: 0;
     width: 100%;
     background-color: #5d7c5a;
@@ -79,32 +54,31 @@ nav {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    z-index: 1000; /* Garante que o menu esteja abaixo do botão */
+    z-index: 1000;
 }
 
 nav.active {
     display: flex;
 }
 
-/* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
     .menuBtn {
         display: block;
     }
 
     .cabecalho {
-        padding: 0 1rem; /* Ajuste no padding */
-        justify-content: center; /* Ajusta o alinhamento para centralizar o conteúdo */
-        position: relative; /* Garante que o botão de menu esteja posicionado corretamente */
+        padding: 0 1rem; 
+        justify-content: center;
+        position: relative; 
     }
 
     .esquerda, .direita {
-        display: none; /* Esconde os links de navegação em dispositivos móveis */
+        display: none; 
     }
 
     .logo {
-        flex-grow: 0; /* Ajusta o crescimento do logo */
-        position: relative; /* Mantém o logo no fluxo normal */
+        flex-grow: 0;
+        position: relative; 
     }
 
     nav a {

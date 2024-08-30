@@ -14,9 +14,9 @@ select {
     transition: all 1s ease;
     color: #fff;
     text-align: center;
-    text-align-last: center; /* Centraliza o texto da opção selecionada */
-    display: block; /* Garante que o seletor seja tratado como um bloco */
-    margin: 0 auto; /* Centraliza o seletor na tela */
+    text-align-last: center;
+    display: block; 
+    margin: 0 auto; 
 }
 
 select:hover {
@@ -30,7 +30,7 @@ select:focus {
 
 select option {
     padding: 10px;
-    text-align: center; /* Centraliza o texto dentro das opções */
+    text-align: center; 
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,13 @@
+.filtroTipo {
+    margin-bottom: 20px;
+}
+
+.filtroTipo label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filtroTipo select {
+    padding: 5px;
+    font-size: 16px;
+}
