@@ -13,6 +13,10 @@ import Carrinho from './componentes/Carrinho/index.js';
 
 import estilos from './componentes/Carrinho/Carrinho.module.css';
 
+import Inicio from './paginas/Inicio/inicio.js';
+import Contato from './paginas/Contato/contatos.js';
+import Sobre from './paginas/Sobre/sobre.js';
+
 const imagens = [
     'https://i.imgur.com/QkIa5tT.jpeg',
     'https://i.imgur.com/Qphac99.jpeg',
@@ -71,6 +75,12 @@ function App() {
     <Router>
       <Cabecalho />
 
+      <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/contato" element={<Contato />} />
+      </Routes>
+
       <Conteudo>
         <Routes>
           <Route 
@@ -78,7 +88,7 @@ function App() {
             element={
               <>
                 <Banner imagens={imagens} />
-                <FiltrarTipo tipo={tipo} setTipo={setTipo} /> {/* Adicionado filtro por tipo */}
+                <FiltrarTipo tipo={tipo} setTipo={setTipo} /> 
                 <OrdenarProdutos criterio={criterioOrdenacao} setCriterio={setCriterioOrdenacao} />
                 <Produtos dados={ordenarProdutos(filtrarProdutos(produtos, tipo), criterioOrdenacao)} addToCart={addToCart} />
               </>
@@ -106,3 +116,6 @@ function App() {
 }
 
 export default App;
+
+
+

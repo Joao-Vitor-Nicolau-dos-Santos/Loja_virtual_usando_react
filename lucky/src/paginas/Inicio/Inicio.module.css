@@ -1,0 +1,46 @@
+.inicio{
+    padding-top: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inicio h1{
+    font-family: "Baskervville SC", serif;
+    font-size: 75px;
+    font-weight: 100;
+}
+
+.inicio h2{
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.inicio h3{
+    font-size: 30px;
+    font-weight: 350;
+}
+
+.inicio h4{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.btnLoja{
+    background-color: #5d7c5a;
+    border: 2px solid #41573f;
+    border-radius: 5px;
+    padding: 10px 1px;
+    font-size: 16px;
+    text-decoration: none;
+    width: 15%;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin-bottom: 50px; 
+    transition: 1s;
+}
+
+.btnLoja:hover{
+    transform: scale(1.1);
+}

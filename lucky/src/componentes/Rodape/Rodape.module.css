@@ -2,14 +2,42 @@
     position: absolute;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #5d7c5a;
     color: #fff;
     border-top: 3px solid #41573f;
     padding-block: 1rem;
+    text-align: center;
 }
 
 .rodape h2{
     font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.rodape a{
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    margin-inline: 15px;
+}
+
+@media (min-width: 768px) {
+    .rodape {
+        flex-direction: row;
+        padding-inline: 2rem;
+        text-align: left;
+    }
+
+    .links {
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .links li {
+        margin-bottom: 0;
+    }
 }

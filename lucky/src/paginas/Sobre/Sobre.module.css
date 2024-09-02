@@ -1,0 +1,42 @@
+body{
+    overflow-x: hidden;
+}
+
+.conteudo{
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.conteudo h1{
+    font-family: "Baskervville SC", serif;
+    font-size: 110px;
+    font-weight: 100;
+    padding-top: 50px;
+}
+
+.conteudo h3{
+    font-size: 50px;
+    font-weight: 325;
+}
+
+.conteudo span{
+    height: 50%;
+    font-size: 30px;
+
+}
+
+@media (max-width: 750px){
+    .conteudo h1{
+        font-size: 70px;
+        padding-top: 20px;
+    }
+
+    .conteudo h3{
+        font-size: 35px;
+    }
+
+    .conteudo span{
+        font-size: 20px;
+    }
+}

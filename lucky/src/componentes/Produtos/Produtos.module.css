@@ -46,7 +46,6 @@
     margin: 5px 0;
 }
 
-/* Media Query para telas menores */
 @media (max-width: 768px) {
     .produtos h2 {
         font-size: 1.8rem;
@@ -61,7 +60,6 @@
     }
 }
 
-/* Media Query para telas muito pequenas */
 @media (max-width: 480px) {
     .produtos ul {
         grid-template-columns: 1fr;

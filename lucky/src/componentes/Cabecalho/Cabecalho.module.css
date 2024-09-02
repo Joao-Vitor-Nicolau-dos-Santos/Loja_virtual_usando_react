@@ -1,12 +1,11 @@
 .cabecalho {
-    
     background-color: #5d7c5a;
     border-bottom: 4px solid #41573f;
     color: #fff;
     position: fixed;
     top: 0;
     height: 70px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between; 

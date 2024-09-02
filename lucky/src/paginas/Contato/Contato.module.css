@@ -1,0 +1,56 @@
+.Contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Contato a{
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: 1s;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.Contato h1{
+    padding-top: 50px;
+    font-family: "Baskervville SC", serif;
+    font-size: 80px;
+    font-weight: 100;
+}
+
+.Contato h3{
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.Contato a:hover{
+    transform: scale(1.2);
+    background-color: #d3d3d3;
+}
+
+@media (max-width: 768px) {
+    .Contato {
+        padding-top: 50px;
+        padding-inline: 20px; 
+    }
+
+    .Contato a {
+        margin-block: 10px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Contato {
+        padding-top: 40px;
+        padding-inline: 10px;
+    }
+
+    .Contato a {
+        font-size: 20px;
+    }
+}

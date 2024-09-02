@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Link} from 'react-router-dom';
 import estilos from './Cabecalho.module.css';
+
+
 
 function Cabecalho() {
     const [menuAtivo, setMenuAtivo] = useState(false);
@@ -14,22 +17,23 @@ function Cabecalho() {
                 {menuAtivo ? 'X' : '☰'}
             </button>
             <div className={estilos.esquerda}>
-                <a href="#">Ínicio</a>
-                <a href="#">Loja</a>
+                <Link to="/inicio">Início</Link>
+                <Link to="/">Loja</Link>
             </div>
             <span className={estilos.logo}>Lucky</span>
             <div className={estilos.direita}>
-                <a href="#">Sobre</a>
-                <a href="#">Contatos</a>
+                <Link to="/sobre">Sobre</Link>
+                <Link to="/contato">Contatos</Link>
             </div>
-            <nav className={menuAtivo ? estilos.active : ''}>
-                <a href="#">Ínício</a>
-                <a href="#">Loja</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contatos</a>
+            <nav className={`${estilos.nav} ${menuAtivo ? estilos.active : ''}`}>
+                <Link to="/inicio">Início</Link>
+                <Link to="/">Loja</Link>
+                <Link to="/sobre">Sobre</Link>
+                <Link to="/contato">Contatos</Link>
             </nav>
         </header>
     );
 }
 
 export default Cabecalho;
+
