@@ -1,6 +1,5 @@
-import Banner from '../../componentes/Banner/index';
 import Estilos from './Inicio.module.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 function Inicio(){
     return(
